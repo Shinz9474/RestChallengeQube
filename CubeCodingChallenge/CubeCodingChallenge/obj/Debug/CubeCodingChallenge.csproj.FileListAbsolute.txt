@@ -1,0 +1,11 @@
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\CubeCodingChallenge.exe.config
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\CubeCodingChallenge.exe
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\CubeCodingChallenge.pdb
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\Newtonsoft.Json.dll
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\RestSharp.dll
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\bin\Debug\Newtonsoft.Json.xml
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\obj\Debug\CubeCodingChallenge.csprojAssemblyReference.cache
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\obj\Debug\CubeCodingChallenge.csproj.CoreCompileInputs.cache
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\obj\Debug\CubeCodingChallenge.csproj.CopyComplete
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\obj\Debug\CubeCodingChallenge.exe
+C:\Users\#$h!nz#\source\repos\CubeCodingChallenge\CubeCodingChallenge\obj\Debug\CubeCodingChallenge.pdb
