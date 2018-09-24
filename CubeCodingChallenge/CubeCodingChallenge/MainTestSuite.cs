@@ -13,14 +13,15 @@ namespace CubeCodingChallenge
         static void Main(string[] args)
         {
             //TestCase.GenerateToken();
+            TestCase.TestGet1();
 
-            UtilityMethods.GenerateToken();
-            TestCase.GetListOfFiles();
-            TestCase.UploadFile();
-            TestCase.VerifyUploadedFile();
-            TestCase.DeleteSpecificFile();
-            TestCase.ShareFile();
-            TestCase.VerifySharedFile();
+            //UtilityMethods.GenerateToken();
+            //TestCase.GetListOfFiles();
+            //TestCase.UploadFile();
+            //TestCase.VerifyUploadedFile();
+            //TestCase.DeleteSpecificFile();
+            //TestCase.ShareFile();
+            //TestCase.VerifySharedFile();
         }
     }
 }

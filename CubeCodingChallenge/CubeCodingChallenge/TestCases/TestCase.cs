@@ -11,6 +11,7 @@ using System.Reflection;
 using CubeCodingChallenge.Variables;
 using CubeCodingChallenge.ResponseClasses;
 using System.Configuration;
+using RestSharp.Authenticators;
 
 namespace CubeCodingChallenge.TestCases
 {
@@ -23,15 +24,13 @@ namespace CubeCodingChallenge.TestCases
             
             try
             {
-                ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
-
-                RestClient client = new RestClient(@"https://ec2-13-127-159-5.ap-south-1.compute.amazonaws.com/sharebox");
+                CommonVariables.serverName= ConfigurationManager.AppSettings.Get("severName");
 
                 RestRequest request = new RestRequest(@"/api/files", Method.GET);
 
                 request.AddParameter("token", Variables.CommonVariables.hosttokenID);
 
-                IRestResponse response = client.Execute(request);
+                IRestResponse response = CommonVariables.client.Execute(request);
 
                 responseContent = response.Content;
 
@@ -223,7 +222,7 @@ namespace CubeCodingChallenge.TestCases
                     }
                     else
                     {
-                        Console.WriteLine("The shared file is missing")
+                        Console.WriteLine("The shared file is missing");
                     }
                 }
                 else if (shouldAccept == "false")
@@ -248,6 +247,71 @@ namespace CubeCodingChallenge.TestCases
                 Console.WriteLine("Following exception occured when trying to make the {0} request: {1}", methodName, ex.StackTrace);
             }
         }
+
+        public static void TestGet1()
+        {
+            String server = @"http://httpbin.org";
+            try
+            {
+                //1. Create a client and server connection.
+                RestClient client = new RestClient(server) {
+
+                    Authenticator = new HttpBasicAuthenticator("Shinu", "shinz947")
+                };
+
+                //2. Create a request instance.
+                RestRequest request = new RestRequest("/basic-auth/Shinu/shinz9474", Method.GET);
+
+                //3. Pass in my resource uri, method and params.
+                
+                //4.Execute the request.
+                IRestResponse response = client.Execute(request);
+
+                //5. Get the reponse, response code, status ,etc etc
+                Console.WriteLine("The response code: " + response.StatusCode);
+
+                if (!response.StatusCode.Equals("OK"))
+                {
+                    logger log = logger.Warning;
+                    throw new MyException(log.ToString());
+                }
+
+                JObject jsonResponse = JObject.Parse(response.Content);
+
+                Console.WriteLine("The response body: " + jsonResponse);
+                Console.ReadLine();
+            }
+            catch(MyException mex)
+            {
+                mex.Message();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        enum logger
+        {
+            Fatal, Warning, Info
+        }
     }
     
+    public class MyException : Exception
+    {
+        
+        MyException()
+        {
+
+        }
+
+        public MyException(String exceptionType)
+        {
+            CommonVariables.exceptionType = exceptionType;
+        }
+        public void Message()
+        {
+            Console.WriteLine(CommonVariables.exceptionType + " level failiure occured");
+        }
+    }
 }

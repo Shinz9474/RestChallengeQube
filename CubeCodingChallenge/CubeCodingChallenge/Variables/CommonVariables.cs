@@ -23,6 +23,12 @@ namespace CubeCodingChallenge.Variables
 
         public static String userName="";
 
+        public static String serverName = "";
+
+        public static RestSharp.RestClient client;
+
+        public static String exceptionType;
+
 
     }
     
